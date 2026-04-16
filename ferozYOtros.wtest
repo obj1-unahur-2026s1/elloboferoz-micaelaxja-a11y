@@ -1,0 +1,68 @@
+import abuelita.*
+import caperucita.*
+import cazador.*
+import feroz.*
+
+
+
+test "Luego, el lobo corre a la casa de la abuelita 
+            y luego de comersela, se disfraza de ella."{
+            feroz.correr() //corre al bosque
+            feroz.correr() //corre a la casa de la abuelita
+            feroz.comer(abuelita) //se come a la abuelita
+                assert.that(feroz.estaDisfrazadoDeAbuela()) //se disfraza de abuelita
+            
+            }
+test "Caperucita cruza el bosque y se le cae una manzana de su canasta."{
+    feroz.correr() //corre al bosque
+    feroz.correr() //corre a la casa de la abuelita
+    feroz.comer(abuelita) //se come a la abuelita
+    assert.equals(5, caperucita.perderManzana()) //tiene 6, se le cae 1
+}
+
+test " Cuando feroz ve llegar a Caperucita, se come a Caperucita con canasta llena y todo." {
+    feroz.correr() //corre al bosque. -1
+    feroz.correr() //corre a la casa de la abuelita. -1
+    feroz.comer(abuelita) //se come a la abuelita. +5
+    caperucita.perderManzana() //se le cae una manzana. -1
+    feroz.comer(caperucita) //se come a caperucita con canasta llena. + 6.2
+    assert.equals(19.1, feroz.pesoActual()) //pesoactual luego de comer.
+    
+}
+test " Finalmente, llega el cazador… El cazador provoca una crisis en el lobo"{
+    feroz.correr() //corre al bosque.
+    feroz.correr() //corre a la casa de la abuelita.
+    feroz.comer(abuelita) //se come a la abuelita.
+    feroz.comer(caperucita) //se come a caperucita con canasta llena.
+    cazador.provocarCrisis() //el cazador proca una crisis en feroz.atacar
+    assert.equals(10, feroz.sufrirCrisis())
+}
+test "El cazador tiene arma"{
+    feroz.correr() //corre al bosque.
+    feroz.correr() //corre a la casa de la abuelita.
+    feroz.comer(abuelita) //se come a la abuelita.
+    feroz.comer(caperucita) //se come a caperucita con canasta llena.
+    cazador.provocarCrisis() //el cazador proca una crisis en feroz.atacar
+    assert.that(cazador.tieneArma())
+
+}
+
+test "El cazador es valiente"{
+    feroz.correr() //corre al bosque.
+    feroz.correr() //corre a la casa de la abuelita.
+    feroz.comer(abuelita) //se come a la abuelita.
+    feroz.comer(caperucita) //se come a caperucita con canasta llena.
+    cazador.provocarCrisis() //el cazador proca una crisis en feroz.atacar()
+    cazador.atacar()
+    assert.that(cazador.esValiente())
+}
+
+test "El cazador está distraido "{
+    feroz.correr() //corre al bosque.
+    feroz.correr() //corre a la casa de la abuelita.
+    feroz.comer(abuelita) //se come a la abuelita.
+    feroz.comer(caperucita) //se come a caperucita con canasta llena.
+    cazador.provocarCrisis() //el cazador proca una crisis en feroz.atacar()
+    assert.notThat(cazador.esDistraido())
+}
+
