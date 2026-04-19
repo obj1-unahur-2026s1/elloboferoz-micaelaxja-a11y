@@ -13,8 +13,8 @@ object cazador {
         elemento = unElemento
 
     }
-    method pesoActual(nuevoPeso){
-        peso = nuevoPeso
+    method pesoActual(){
+        return peso
     }
 
     method fuerzaActual(nuevoValor){

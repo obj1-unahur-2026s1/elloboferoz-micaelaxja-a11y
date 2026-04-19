@@ -6,7 +6,7 @@ import caperucita.*
 
 object feroz {
     const pesoInicial = 10
-    var peso = 10
+    var peso = pesoInicial
     var estaDisfrazado = false         
 
     method volverAlPesoInicial(){ 
@@ -27,7 +27,7 @@ object feroz {
     }
     method aumentoDisminucionDePeso(unidades){
         peso = peso + unidades
-    
+
     }
 
     method sufrirCrisis(){ 
@@ -37,13 +37,24 @@ object feroz {
 
     method correr(){ 
         peso = peso - 1
-        return peso
+        
     }
     method estaDisfrazadoDeAbuela(){
-        estaDisfrazado = true
-        return  estaDisfrazado
+            estaDisfrazado = true
+            return estaDisfrazado
+        
+
+}
+        
+        
+        
+    
+    method conversar(alguien){
+
+        
+        }
     }
-} 
+
 
 
 

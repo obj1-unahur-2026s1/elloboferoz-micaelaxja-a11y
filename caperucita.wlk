@@ -1,3 +1,4 @@
+import feroz.*
 object caperucita {
     const pesoCaperucita = 60
     var cantidadManzanas = 6
@@ -6,13 +7,18 @@ object caperucita {
     var pesoActual = pesoCaperucita + (cantidadManzanas * pesoManzanas)
     
     method pesoActual(){
-         pesoActual= pesoCaperucita + (cantidadManzanas * pesoManzanas)
+         pesoActual = pesoCaperucita + (cantidadManzanas * pesoManzanas)
         return pesoActual
     }
 
     method perderManzana(){
-        cantidadManzanas = cantidadManzanas - 1
-        return cantidadManzanas
+
+        cantidadManzanas = cantidadManzanas -1
+
+    }
+        method provocarCrisis(){
+        feroz.sufrirCrisis()         
+
     }
 }
 
